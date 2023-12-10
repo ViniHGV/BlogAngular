@@ -1,0 +1,15 @@
+<header class="container-header">
+  <h2>
+    <code>BLOG</code>
+  </h2>
+  <nav class="container-nav">
+    <div
+      [ngClass]="linkSelected === link.name ? 'link-nav-selected' : 'link-nav'"
+      (click)="handleLinkSecelted(link.name)"
+      *ngFor="let link of navLinks"
+    >
+      <a>{{ link.name }}</a>
+      <div class="border-decoration"></div>
+    </div>
+  </nav>
+</header>

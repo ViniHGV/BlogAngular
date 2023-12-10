@@ -1,0 +1,49 @@
+.container-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 50px;
+  position: fixed;
+  width: 100%;
+
+  h2 {
+    font-family: "Roboto Condensed";
+    font-size: 42px;
+    font-weight: 800;
+  }
+}
+
+.container-nav {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+
+  a {
+    text-decoration: none;
+    color: #000;
+  }
+}
+
+.link-nav {
+  .border-decoration {
+    width: 0;
+    height: 2.2px;
+    background-color: black;
+    transition: 0.3s;
+  }
+  &:hover {
+    .border-decoration {
+      width: 30%;
+      background-color: black;
+    }
+  }
+}
+
+.link-nav-selected {
+  .border-decoration {
+    height: 2.2px;
+    transition: 0.3s;
+    width: 30%;
+    background-color: black;
+  }
+}
