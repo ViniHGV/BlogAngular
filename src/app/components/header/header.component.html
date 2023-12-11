@@ -8,7 +8,7 @@
       (click)="handleLinkSecelted(link.name)"
       *ngFor="let link of navLinks"
     >
-      <a>{{ link.name }}</a>
+      <a href="{{ link.url }}">{{ link.name }}</a>
       <div class="border-decoration"></div>
     </div>
   </nav>

@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { NgFor, NgClass } from '@angular/common';
+import { NavLinks } from '../../models/nav-links';
 
 @Component({
   selector: 'app-header',
@@ -9,9 +10,9 @@ import { NgFor, NgClass } from '@angular/common';
   styleUrl: './header.component.scss',
 })
 export class HeaderComponent {
-  navLinks = [
-    { name: 'Principais Noticias', url: '' },
-    { name: 'Categorias', url: '' },
+  navLinks: NavLinks[] = [
+    { name: 'Principais Noticias', url: '#main-news' },
+    { name: 'Categorias', url: '#categories' },
   ];
   @Input() linkSelected: string = '';
 

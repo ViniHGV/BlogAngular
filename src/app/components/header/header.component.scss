@@ -1,10 +1,12 @@
 .container-header {
+  z-index: 10;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px 50px;
   position: fixed;
   width: 100%;
+  background-color: #fff;
 
   h2 {
     font-family: "Roboto Condensed";
