@@ -5,6 +5,7 @@ import { SwiperComponent } from './components/swiper/swiper.component';
 import { HttpClientModule } from '@angular/common/http';
 import { GetDatesSwiperService } from './services/get-dates-swiper.service';
 import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @Component({
   selector: 'app-root',
@@ -18,6 +19,7 @@ import { HeaderComponent } from './components/header/header.component';
     SwiperComponent,
     HttpClientModule,
     HeaderComponent,
+    FooterComponent,
   ],
 })
 export class AppComponent {
