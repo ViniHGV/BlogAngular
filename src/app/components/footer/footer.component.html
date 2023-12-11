@@ -1,0 +1,18 @@
+<footer class="footer-container">
+  <h2>BLOG</h2>
+  <p>{{ "@" }}Powered By - ViniHGV</p>
+  <div class="container-social-media">
+    <a
+      *ngFor="let icon of linksSociaMedia"
+      target="_blank"
+      href="https://github.com/ViniHGV"
+      [ngClass]="
+        icon.typeIcon === 'linkedin'
+          ? 'icon-container-linkedin'
+          : 'icon-container'
+      "
+    >
+      <ng-icon name="{{ icon.nameIcon }}"></ng-icon>
+    </a>
+  </div>
+</footer>
