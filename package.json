@@ -2,10 +2,10 @@
   "name": "blog-challenge",
   "version": "0.0.0",
   "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "watch": "ng build --watch --configuration development",
+    "ng": "ng && json-server --watch src/assets/data/swiperDate.json",
+    "start": "ng serve && json-server --watch src/assets/data/swiperDate.json",
+    "build": "ng build && json-server --watch src/assets/data/swiperDate.json",
+    "watch": "ng build --watch --configuration development && json-server --watch src/assets/data/swiperDate.json",
     "test": "ng test",
     "serve:ssr:blog-challenge": "node dist/blog-challenge/server/server.mjs"
   },
