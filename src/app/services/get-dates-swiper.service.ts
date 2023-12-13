@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { SwiperData } from '../models/swiper-data';
 import { Observable, of } from 'rxjs';
+import { IDataNews } from '../models/get-data-news';
 
 @Injectable({
   providedIn: 'root',
@@ -9,7 +10,14 @@ import { Observable, of } from 'rxjs';
 export class GetDatesSwiperService {
   // url: string = 'http://localhost:3000/swiperdata';
 
-  // constructor(private httpClient: HttpClient) {}
+  countryAPIRequest = 'br';
+  urlNewsAPI = `https://newsapi.org/v2/top-headlines?country=${this.countryAPIRequest}&apiKey=7ee30f6c08ee4311bad90f5220a6da28`;
+
+  constructor(private httpClient: HttpClient) {}
+
+  getDataNewAPI(): Observable<IDataNews[]> {
+    return this.httpClient.get<IDataNews[]>(this.urlNewsAPI);
+  }
 
   SwiperData: SwiperData[] = [
     {
