@@ -14,43 +14,43 @@
     >
       <div
         class="container-grid-col-1"
-        style="background: url('{{ data.swiperslide[0].image }}');
+        style="background: url('{{ data.articles[0].urlToImage }}');
        background-repeat: no-repeat; background-position: center; background-size: cover;"
       >
         <div class="informations-card">
-          <p class="toggle">{{ data.swiperslide[0].toggle }}</p>
-          <p>{{ data.swiperslide[0].title }}</p>
+          <p class="toggle">{{ data.articles[0].publishedAt }}</p>
+          <p>{{ data.articles[0].title }}</p>
         </div>
       </div>
       <div class="container-grid-col-2">
         <div class="container-swiper-slide">
           <div
-            style="background: url('{{ data.swiperslide[1].image }}');
+            style="background: url('{{ data.articles[1].urlToImage }}');
        background-repeat: no-repeat; background-position: center; background-size: cover;"
           >
             <div class="informations-card">
-              <p class="toggle">{{ data.swiperslide[1].toggle }}</p>
-              <p>{{ data.swiperslide[1].title }}</p>
+              <p class="toggle">{{ data.articles[1].publishedAt }}</p>
+              <p>{{ data.articles[1].title }}</p>
             </div>
           </div>
           <div
-            style="background: url('{{ data.swiperslide[2].image }}');
+            style="background: url('{{ data.articles[2].urlToImage }}');
        background-repeat: no-repeat; background-position: center; background-size: cover;"
           >
             <div class="informations-card">
-              <p class="toggle">{{ data.swiperslide[2].toggle }}</p>
-              <p>{{ data.swiperslide[2].title }}</p>
+              <p class="publishedAt">{{ data.articles[2].publishedAt }}</p>
+              <p>{{ data.articles[2].title }}</p>
             </div>
           </div>
         </div>
         <div
           class="container-row-2"
-          style="background: url('{{ data.swiperslide[3].image }}');
+          style="background: url('{{ data.articles[3].urlToImage }}');
        background-repeat: no-repeat; background-position: center; background-size: cover;"
         >
           <div class="informations-card">
-            <p class="toggle">{{ data.swiperslide[3].toggle }}</p>
-            <p>{{ data.swiperslide[3].title }}</p>
+            <p class="publishedAt">{{ data.articles[3].publishedAt }}</p>
+            <p>{{ data.articles[3].title }}</p>
           </div>
         </div>
       </div>
