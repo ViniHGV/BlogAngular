@@ -1,10 +1,13 @@
 import { CUSTOM_ELEMENTS_SCHEMA, Component, OnInit } from '@angular/core';
 import { register } from 'swiper/element/bundle';
-import { SwiperData } from '../../models/swiper-data';
-import { GetDatesSwiperService } from '../../services/get-dates-swiper.service';
 import { HttpClientModule } from '@angular/common/http';
 import { NgFor } from '@angular/common';
-import { IArticles, IDataNews } from '../../models/get-data-news';
+import {
+  IArticles,
+  IDataNews,
+  SwiperArticles,
+} from '../../models/get-data-news';
+import { ApiNewsService } from '../../services/api-news-service.service';
 
 register();
 
@@ -17,37 +20,27 @@ register();
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class SwiperComponent implements OnInit {
-  constructor(private getSwiperData: GetDatesSwiperService) {}
+  constructor(private ApiNewService: ApiNewsService) {}
 
-  swiperData: SwiperData[] = [];
+  dataNews: IDataNews = { articles: [], status: '', totalResults: 0 };
+  dataNewsFilteredForSwiper: IArticles[] = [];
+  swiperData: SwiperArticles[] = [
+    {
+      articles: [],
+    },
+  ];
 
-  getNewsAPI: IDataNews[] | IDataNews | any = [];
-
-  newsAPIFiltered: IArticles[] = [];
-
-  articles: IArticles[] = [];
-
-  ngOnInit() {
-    this.getSwiperData
-      .getSwiperData()
-      .subscribe((data) => (this.swiperData = data));
-    console.log(this.swiperData);
-
-    this.getSwiperData
-      .getDataNewAPI()
-      .pipe()
-      .subscribe((data) => {
-        this.getNewsAPI = data;
-      });
-
-    this.articles = this.getNewsAPI.articles;
-
-    //Exemplo de Filtro
-    this.newsAPIFiltered = this.articles.filter(
-      (item) => item.author && item.author.includes('Minas')
-    );
-
-    console.log(this.newsAPIFiltered);
-    console.log(this.getNewsAPI);
+  ngOnInit(): void {
+    // setTimeout(() => {
+    this.ApiNewService.getAll().subscribe((data) => {
+      this.dataNews = data;
+      this.dataNewsFilteredForSwiper = data.articles.filter(
+        (article) => article.source.id != null && article.content != null
+      );
+    });
+    this.swiperData[0].articles = this.dataNewsFilteredForSwiper
+      .slice(0, 2)
+      .concat(this.dataNewsFilteredForSwiper.slice(4, 6));
+    // }, 6000);
   }
 }
