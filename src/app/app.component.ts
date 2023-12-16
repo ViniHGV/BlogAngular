@@ -3,16 +3,17 @@ import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { SwiperComponent } from './components/swiper/swiper.component';
 import { HttpClientModule } from '@angular/common/http';
-import { GetDatesSwiperService } from './services/get-dates-swiper.service';
+// import { GetDatesSwiperService } from './services/get-dates-swiper.service';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { ApiNewsService } from './services/api-news-service.service';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
-  providers: [GetDatesSwiperService],
+  providers: [ApiNewsService],
   imports: [
     CommonModule,
     RouterOutlet,
