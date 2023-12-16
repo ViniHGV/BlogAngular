@@ -4,12 +4,15 @@ export interface IDataNews {
   totalResults: number;
 }
 
+export interface SwiperArticles {
+  articles: IArticles[];
+}
 export interface IArticles {
+  source: { id: string; name: string };
   author: string;
   content: string | null;
   description: string | null;
-  publishedAt: string;
-  source: { id: string; name: string };
+  publishedAt: Date;
   title: string;
   url: string;
   urlToImage: string | null;
