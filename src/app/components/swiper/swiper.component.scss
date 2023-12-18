@@ -1,6 +1,10 @@
 $font-content: "Montserrat";
 $font-title: "Roboto Condensed";
 
+a {
+  text-decoration: none;
+}
+
 .container-swiper-content {
   padding: 140px 50px 0 50px;
   display: flex;
@@ -24,6 +28,7 @@ $font-title: "Roboto Condensed";
 .container-swiper {
   height: 80dvh;
   width: 100%;
+  text-decoration: none;
 }
 
 .container-swiper-slide {
@@ -32,6 +37,7 @@ $font-title: "Roboto Condensed";
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 10px;
   border-radius: 8px;
+  text-decoration: none;
 }
 
 .container-grid-col-1 {
